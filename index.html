@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Astro CM</title>
+
+    <!-- SEO & Social Sharing Meta Tags -->
+    <meta name="description" content="An interface to upload Markdown/MDX posts and images directly to your project's repository on GitHub, Gitea, or Gogs, simplifying your content workflow." />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Astro CM" />
+    <meta property="og:description" content="An interface to upload Markdown/MDX posts and images directly to your project's repository on GitHub, Gitea, or Gogs, simplifying your content workflow." />
+    <meta property="og:image" content="https://raw.githubusercontent.com/tienledigital/AstroCM/main/.github/assets/app-preview.png" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Astro CM" />
+    <meta name="twitter:description" content="An interface to upload Markdown/MDX posts and images directly to your project's repository on GitHub, Gitea, or Gogs, simplifying your content workflow." />
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/tienledigital/AstroCM/main/.github/assets/app-preview.png" />
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❄️</text></svg>">
+    
+    <!-- Fonts: Inter for UI -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS with Typography Plugin -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+            },
+            colors: {
+              notion: {
+                bg: '#FFFFFF',
+                sidebar: '#F7F7F5', // Notion sidebar gray
+                hover: '#EFEFEF',   // Notion hover gray
+                text: '#37352F',    // Notion primary text
+                muted: '#787774',   // Notion secondary text
+                border: '#E9E9E7',  // Notion border
+                select: '#E3E2E0',  // Notion selection
+                blue: '#2383E2',    // Notion blue (links/buttons)
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+<style>
+  body {
+    background-color: #FFFFFF;
+    color: #37352F;
+  }
+  body.login-bg {
+    background-color: #F7F7F5;
+  }
+  
+  /* Scrollbar styling to be more subtle like Notion */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D3D1CB;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #A09F9B;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+
+  /* Markdown Preview Overrides */
+  .markdown-preview {
+    font-family: 'Inter', sans-serif;
+    color: #37352F;
+  }
+</style>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
